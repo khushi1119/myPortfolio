@@ -223,6 +223,6 @@ export const projects = [
     screenshots: [portfolioHome, portfolio2, portfolio3],
     tags: ["React.js", "JavaScript", "CSS", "Responsive Design"],
     github: "https://github.com/khushi1119/myPortfolio/tree/main",
-    webapp: "https://vercel.com/tiwarikhushi1119-3759s-projects/my-portfolio",
+    webapp: "my-portfolio-seven-bice-99.vercel.app",
   },
 ];
