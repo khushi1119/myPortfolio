@@ -38,8 +38,6 @@ import College from "./assets/education_logo/college.jpg";
 import schoollogo from "./assets/education_logo/schoollogo.png";
 
 //work
-// HireAlytics
-
 import hireanalyticsHome from "./assets/work/HireAIlytics/HireAIlyticsHome.png";
 import hireanalytics2 from "./assets/work/HireAIlytics/HireAIlytics2.png";
 import hireanalytics3 from "./assets/work/HireAIlytics/HireAIlytics3.png";
