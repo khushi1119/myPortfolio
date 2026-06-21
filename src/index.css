@@ -1,0 +1,261 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  --animate-blob: blob 10s infinite;
+
+  @keyframes blob {
+    0% {
+      transform: scale(1);
+    }
+    33% {
+      transform: scale(1.2);
+    }
+    66% {
+      transform: scale(0.8);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Aurora Background */
+
+.aurora {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  border-radius: 9999px;
+  filter: blur(180px);
+}
+
+.aurora-1 {
+  background: linear-gradient(
+    135deg,
+    rgba(16, 185, 129, 0.25),
+    rgba(6, 182, 212, 0.1)
+  );
+  top: -200px;
+  left: -100px;
+  animation: float1 12s ease-in-out infinite;
+}
+
+.aurora-2 {
+  background: linear-gradient(
+    135deg,
+    rgba(6, 182, 212, 0.2),
+    rgba(16, 185, 129, 0.1)
+  );
+  bottom: -200px;
+  right: -100px;
+  animation: float2 15s ease-in-out infinite;
+}
+@keyframes float1 {
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  50% {
+    transform: translate(80px, 50px);
+  }
+
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes float2 {
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  50% {
+    transform: translate(-80px, -50px);
+  }
+
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #050414;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+* {
+  font-family: "Poppins", sans-serif;
+}
+/* ===== 3D Flip Effect ===== */
+
+.perspective {
+  perspective: 1000px;
+}
+
+.flip-card {
+  position: relative;
+  width: 100%;
+  min-height: 420px;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+  overflow: visible;
+}
+
+.perspective:hover .flip-card {
+  transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 24px;
+}
+
+.flip-back {
+  transform: rotateY(180deg);
+  overflow: visible;
+}
+/* ===== Skill Card Premium Border Glow ===== */
+
+.skill-card {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+
+.skill-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  border-radius: inherit;
+
+  border: 1px solid transparent;
+
+  pointer-events: none;
+
+  transition: all 0.3s ease;
+}
+
+.skill-card:hover::after {
+  border-color: #34d399;
+
+  box-shadow:
+    0 0 10px #34d399,
+    0 0 20px #34d399,
+    inset 0 0 10px rgba(52, 211, 153, 0.5);
+}
+
+/* Moving Shine */
+
+.skill-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -120%;
+  width: 80px;
+  height: 220%;
+  z-index: 20;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    rgba(52, 211, 153, 1),
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+
+  transform: rotate(25deg);
+  transition: all 0.9s ease;
+}
+
+.skill-card img,
+.skill-card span {
+  position: relative;
+  z-index: 30;
+}
+
+.skill-card:hover::before {
+  left: 160%;
+}
+@keyframes borderPulse {
+  0% {
+    box-shadow:
+      0 0 5px rgba(52, 211, 153, 0.2),
+      0 0 10px rgba(52, 211, 153, 0.15);
+  }
+
+  50% {
+    box-shadow:
+      0 0 15px rgba(52, 211, 153, 0.5),
+      0 0 35px rgba(52, 211, 153, 0.25);
+  }
+
+  100% {
+    box-shadow:
+      0 0 5px rgba(52, 211, 153, 0.2),
+      0 0 10px rgba(52, 211, 153, 0.15);
+  }
+}
+
+.skill-card:hover {
+  border-color: #34d399;
+
+  transform: translateY(-4px) scale(1.03);
+
+  box-shadow:
+    0 0 8px #34d399,
+    0 0 16px #34d399,
+    0 0 32px rgba(52, 211, 153, 0.7),
+    0 0 64px rgba(52, 211, 153, 0.4);
+
+  animation: borderPulse 1.5s infinite;
+}
+@layer utilities {
+  .clip-path-skills {
+    clip-path: polygon(0 0, 100% 0, 100% 98%, 75% 95%, 0 100%);
+  }
+
+  .clip-path-experience {
+    clip-path: polygon(0 0%, 100% 0, 100% 98%, 25% 95%, 0 100%);
+  }
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 12s linear infinite;
+}
