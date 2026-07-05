@@ -4,7 +4,7 @@ A modern, responsive, and interactive developer portfolio built with **React.js*
 
 ## 🌐 Live Demo
 
-🔗 **Portfolio Website:** my-portfolio-seven-bice-99.vercel.app
+🔗 **Portfolio Website:** https://my-portfolio-seven-bice-99.vercel.app/ 
 
 ## ✨ Features
 
