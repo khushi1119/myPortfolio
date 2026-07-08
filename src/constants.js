@@ -132,7 +132,7 @@ export const experiences = [
     img: msmeLogo,
     role: "Fullstack Developer",
     company: "MSME Technology Center ",
-    date: "July 2026 - August 2026",
+    date: "June 2026 - July 2026",
     desc: "Participated in an industry-oriented training program covering full stack web development concepts. Worked on application design, REST API integration, database management, and responsive user interface development using the MERN stack.",
     skills: [
       "JavaScript",
