@@ -75,7 +75,7 @@ Integrated contact form allowing visitors and recruiters to connect directly.
 ### Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/portfolio.git
+git clone https://github.com/khushi1119/myPortfolio.git
 ```
 
 ### Navigate to Project
